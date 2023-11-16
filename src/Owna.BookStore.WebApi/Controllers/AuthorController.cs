@@ -16,9 +16,9 @@ namespace Owna.BookStore.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetAuthorById(int id)
+        public async Task<IActionResult> GetAuthorById(int id)
         {
-            var author = _authorService.GetAuthorById(id);
+            var author = await _authorService.GetAuthorById(id);
             if (author == null)
             {
                 return NotFound();
@@ -28,30 +28,24 @@ namespace Owna.BookStore.WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllAuthors()
+        public async Task<IActionResult> GetAllAuthors()
         {
-            var authors = _authorService.GetAllAuthors();
+            var authors = await _authorService.GetAllAuthors();
             return Ok(authors);
         }
 
+
+
         [HttpPost]
-        public IActionResult AddAuthor([FromBody] AuthorDto authorDto)
+        public async Task<IActionResult> AddAuthor([FromBody] AuthorDto authorDto)
         {
             if (authorDto == null)
             {
                 return BadRequest("Author data is required.");
             }
+            await _authorService.AddAuthor(authorDto);
 
-            try
-            {
-                var createdAuthor = _authorService.AddAuthor(authorDto);
-                return CreatedAtAction(nameof(GetAuthorById), new { id = createdAuthor.Id }, createdAuthor);
-            }
-            catch (Exception ex)
-            {
-                // Log the exception here
-                return StatusCode(500, "An error occurred while adding the author.");
-            }
+            return Ok();
         }
     }
 }

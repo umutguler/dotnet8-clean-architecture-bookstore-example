@@ -4,10 +4,10 @@ namespace Owna.BookStore.Domain.Interfaces
 {
     public interface IBookRepository
     {
-        Book AddBook(Book book);
-        IEnumerable<Book> GetBooksByTitle(string title);
-        IEnumerable<Book> GetBooksByAuthor(string authorName);
-        Book? GetBookById(int id);
+        Task<Book?> GetBookByIdAsync(int id);
+        Task<IEnumerable<Book>> GetBooksByTitleAsync(string title);
+        Task<IEnumerable<Book>> GetBooksByAuthorAsync(string authorName);
+        Task AddBookAsync(Book book);
     }
 
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "Name": "F. Scott Fitzgerald",
+    "BookId": 1
+  },
+  {
+    "Id": 2,
+    "Name": "Harper Lee",
+    "BookId": 2
+  },
+  {
+    "Id": 3,
+    "Name": "George Orwell",
+    "BookId": 3
+  },
+  {
+    "Id": 4,
+    "Name": "Stephen King",
+    "BookId": 4
+  },
+  {
+    "Id": 5,
+    "Name": "Erich Gamma",
+    "BookId": 5
+  },
+  {
+    "Id": 6,
+    "Name": "Richard Helm",
+    "BookId": 5
+  },
+  {
+    "Id": 7,
+    "Name": "Ralph Johnson",
+    "BookId": 5
+  },
+  {
+    "Id": 8,
+    "Name": "John Vlissides",
+    "BookId": 5
+  }
+]

@@ -4,8 +4,8 @@ namespace Owna.BookStore.Domain.Interfaces
 {
     public interface IAuthorRepository
     {
-        Author? GetAuthorById(int id);
-        void AddAuthor(Author author);
-        IEnumerable<Author> GetAllAuthors();
+        Task<Author?> GetAuthorByIdAsync(int id);
+        Task<List<Author>> GetAllAuthorsAsync();
+        Task AddAuthorAsync(Author author);
     }
 }

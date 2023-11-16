@@ -1,4 +1,5 @@
-﻿using Owna.BookStore.Application.Dtos;
+﻿using AutoMapper;
+using Owna.BookStore.Application.Dtos;
 using Owna.BookStore.Application.Interfaces;
 using Owna.BookStore.Domain.Entities;
 using Owna.BookStore.Domain.Interfaces;
@@ -8,70 +9,32 @@ namespace Owna.BookStore.Application.Services
     public class BookService : IBookService
     {
         private readonly IBookRepository _bookRepository;
-        private readonly IAuthorRepository _authorRepository;
+        private readonly IMapper _mapper;
 
-        public BookService(IBookRepository bookRepository, IAuthorRepository authorRepository)
+        public BookService(IBookRepository bookRepository, IMapper mapper)
         {
             _bookRepository = bookRepository;
-            _authorRepository = authorRepository;
+            _mapper = mapper;
         }
 
-        public BookDto GetBookById(int id)
+        public async Task<BookDto?> GetBookByIdAsync(int id)
         {
-            var book = _bookRepository.GetBookById(id);
-            var bookDto = new BookDto()
-            {
-                Id = book.Id,
-                Title = book.Title,
-                Description = book.Description,
-                CoverImageUrl = book.CoverImageUrl,
-                Authors = null
-            };
-
-            return bookDto;
+            return _mapper.Map<BookDto>(await _bookRepository.GetBookByIdAsync(id));
         }
 
-        public BookDto AddBook(BookDto bookDto)
+        public async Task<IEnumerable<BookDto>> SearchBooksAsync(string query)
         {
-            var book = new Book
-            {
-                Title = bookDto.Title,
-                Description = bookDto.Description,
-                CoverImageUrl = bookDto.CoverImageUrl
-            };
+            var books = (await _bookRepository.GetBooksByTitleAsync(query))
+                        .Concat(await _bookRepository.GetBooksByAuthorAsync(query))
+                        .Distinct();
 
-            foreach (var authorDto in bookDto.Authors)
-            {
-                var author = _authorRepository.GetAuthorById(authorDto.Id);
-                if (author != null)
-                {
-                    book.AddAuthor(author);
-                }
-            }
-
-            _bookRepository.AddBook(book);
-            bookDto.Id = book.Id;
-            return bookDto;
+            return _mapper.Map<IEnumerable<BookDto>>(books);
         }
 
-        public IEnumerable<BookDto> SearchBooks(string query)
+        public async Task AddBookAsync(BookDto bookDto)
         {
-            var books = _bookRepository.GetBooksByTitle(query)
-                .Concat(_bookRepository.GetBooksByAuthor(query))
-                .Distinct();
-
-            return books.Select(book => new BookDto
-            {
-                Id = book.Id,
-                Title = book.Title,
-                Description = book.Description,
-                CoverImageUrl = book.CoverImageUrl,
-                Authors = book.Authors.Select(author => new AuthorDto
-                {
-                    Id = author.Id,
-                    Name = author.Name
-                }).ToList()
-            });
+            var book = _mapper.Map<Book>(bookDto);
+            await _bookRepository.AddBookAsync(book);
         }
     }
 }

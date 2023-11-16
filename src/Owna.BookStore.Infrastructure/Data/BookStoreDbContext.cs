@@ -9,12 +9,5 @@ namespace Owna.BookStore.Infrastructure.Data
         public DbSet<Book> Books { get; set; }
 
         public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options) : base(options) { }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            SeedSampleData.Seed(modelBuilder);
-            base.OnModelCreating(modelBuilder);
-        }
     }
-
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Title": "The Great Gatsby",
+    "Description": "The story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan.",
+    "CoverImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg"
+  },
+  {
+    "Id": 2,
+    "Title": "To Kill a Mockingbird",
+    "Description": "As a Southern Gothic novel and Bildungsroman, the primary themes of To Kill a Mockingbird involve racial injustice and the destruction of innocence.",
+    "CoverImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg"
+  },
+  {
+    "Id": 3,
+    "Title": "1984",
+    "Description": "Nineteen Eighty-Four (also published as 1984) is a dystopian novel and cautionary tale by English writer George Orwell.",
+    "CoverImageUrl": "https://upload.wikimedia.org/wikipedia/en/5/51/1984_first_edition_cover.jpg"
+  },
+  {
+    "Id": 4,
+    "Title": "IT",
+    "Description": "It is a 1986 horror novel by American author Stephen King. It was his 22nd book and his 17th novel written under his own name.",
+    "CoverImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/It_%281986%29_front_cover%2C_first_edition.jpg"
+  },
+  {
+    "Id": 5,
+    "Title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+    "Description": "Design Patterns: Elements of Reusable Object-Oriented Software (1994) is a software engineering book describing software design patterns.",
+    "CoverImageUrl": "https://upload.wikimedia.org/wikipedia/en/7/78/Design_Patterns_cover.jpg"
+  }
+]

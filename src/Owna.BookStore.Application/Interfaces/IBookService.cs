@@ -4,8 +4,8 @@ namespace Owna.BookStore.Application.Interfaces
 {
     public interface IBookService
     {
-        BookDto AddBook(BookDto bookDto);
-        IEnumerable<BookDto> SearchBooks(string query);
-        BookDto GetBookById(int id);
+        Task<BookDto?> GetBookByIdAsync(int id);
+        Task<IEnumerable<BookDto>> SearchBooksAsync(string query);
+        Task AddBookAsync(BookDto bookDto);
     }
 }
