@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owna.BookStore.Domain", "src\Owna.BookStore.Domain\Owna.BookStore.Domain.csproj", "{9507D7B1-2B7E-4C15-852F-7C027A3AC8CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ED8657B3-5440-4159-90E2-5B1018AAC69D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owna.BookStore.WebApi", "src\Owna.BookStore.WebApi\Owna.BookStore.WebApi.csproj", "{D4AC6CCB-3054-42D2-B09E-40E0893BA841}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owna.BookStore.Infrastructure", "src\Owna.BookStore.Infrastructure\Owna.BookStore.Infrastructure.csproj", "{F98109FB-E9C5-4A84-9260-762AE65B5C1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owna.BookStore.Application", "src\Owna.BookStore.Application\Owna.BookStore.Application.csproj", "{C5034ADA-8288-4D30-96E9-E1D5994E8155}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9507D7B1-2B7E-4C15-852F-7C027A3AC8CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9507D7B1-2B7E-4C15-852F-7C027A3AC8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9507D7B1-2B7E-4C15-852F-7C027A3AC8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9507D7B1-2B7E-4C15-852F-7C027A3AC8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4AC6CCB-3054-42D2-B09E-40E0893BA841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4AC6CCB-3054-42D2-B09E-40E0893BA841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4AC6CCB-3054-42D2-B09E-40E0893BA841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4AC6CCB-3054-42D2-B09E-40E0893BA841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F98109FB-E9C5-4A84-9260-762AE65B5C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F98109FB-E9C5-4A84-9260-762AE65B5C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F98109FB-E9C5-4A84-9260-762AE65B5C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F98109FB-E9C5-4A84-9260-762AE65B5C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5034ADA-8288-4D30-96E9-E1D5994E8155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5034ADA-8288-4D30-96E9-E1D5994E8155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5034ADA-8288-4D30-96E9-E1D5994E8155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5034ADA-8288-4D30-96E9-E1D5994E8155}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9507D7B1-2B7E-4C15-852F-7C027A3AC8CA} = {ED8657B3-5440-4159-90E2-5B1018AAC69D}
+		{D4AC6CCB-3054-42D2-B09E-40E0893BA841} = {ED8657B3-5440-4159-90E2-5B1018AAC69D}
+		{F98109FB-E9C5-4A84-9260-762AE65B5C1C} = {ED8657B3-5440-4159-90E2-5B1018AAC69D}
+		{C5034ADA-8288-4D30-96E9-E1D5994E8155} = {ED8657B3-5440-4159-90E2-5B1018AAC69D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D228FDB-F70C-408B-A215-C09A445E8C3C}
+	EndGlobalSection
+EndGlobal
