@@ -1,6 +1,6 @@
-﻿using Owna.BookStore.Domain.Data;
-using Owna.BookStore.Domain.Entities;
+﻿using Owna.BookStore.Domain.Entities;
 using Owna.BookStore.Domain.Interfaces;
+using Owna.BookStore.Infrastructure.Data;
 
 namespace Owna.BookStore.Infrastructure
 {

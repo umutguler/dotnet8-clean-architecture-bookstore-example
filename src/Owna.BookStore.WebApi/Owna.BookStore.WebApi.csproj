@@ -12,4 +12,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Owna.BookStore.Application\Owna.BookStore.Application.csproj" />
+    <ProjectReference Include="..\Owna.BookStore.Infrastructure\Owna.BookStore.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

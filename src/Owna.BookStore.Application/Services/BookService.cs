@@ -18,7 +18,17 @@ namespace Owna.BookStore.Application.Services
 
         public BookDto GetBookById(int id)
         {
-            throw new NotImplementedException();
+            var book = _bookRepository.GetBookById(id);
+            var bookDto = new BookDto()
+            {
+                Id = book.Id,
+                Title = book.Title,
+                Description = book.Description,
+                CoverImageUrl = book.CoverImageUrl,
+                Authors = null
+            };
+
+            return bookDto;
         }
 
         public BookDto AddBook(BookDto bookDto)

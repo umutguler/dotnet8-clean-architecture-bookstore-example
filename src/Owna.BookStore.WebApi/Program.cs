@@ -1,6 +1,11 @@
 
 using Microsoft.EntityFrameworkCore;
-using Owna.BookStore.Domain.Data;
+using Owna.BookStore.Application.Interfaces;
+using Owna.BookStore.Application.Services;
+using Owna.BookStore.Domain.Interfaces;
+using Owna.BookStore.Infrastructure;
+using Owna.BookStore.Infrastructure.Data;
+using Owna.BookStore.WebApi.Configuration;
 
 namespace Owna.BookStore.WebApi
 {
@@ -12,6 +17,8 @@ namespace Owna.BookStore.WebApi
 
             // Add services to the container.
             builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase("BookStoreDb"));
+            ServiceConfiguration.AddTransientServices(builder.Services);
+
             builder.Services.AddControllers();
             
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

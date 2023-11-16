@@ -15,25 +15,6 @@ namespace Owna.BookStore.WebApi.Controllers
             _bookService = bookService;
         }
 
-        [HttpPost]
-        public IActionResult AddBook([FromBody] BookDto bookDto)
-        {
-            if (bookDto == null)
-            {
-                return BadRequest("Book data is required.");
-            }
-
-            try
-            {
-                var createdBook = _bookService.AddBook(bookDto);
-                return CreatedAtAction(nameof(GetBookById), new { id = createdBook.Id }, createdBook);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "An error occurred while adding the book.");
-            }
-        }
-
         [HttpGet("{id}")]
         public IActionResult GetBookById(int id)
         {
@@ -56,6 +37,25 @@ namespace Owna.BookStore.WebApi.Controllers
 
             var books = _bookService.SearchBooks(query);
             return Ok(books);
+        }
+
+        [HttpPost]
+        public IActionResult AddBook([FromBody] BookDto bookDto)
+        {
+            if (bookDto == null)
+            {
+                return BadRequest("Book data is required.");
+            }
+
+            try
+            {
+                var createdBook = _bookService.AddBook(bookDto);
+                return CreatedAtAction(nameof(GetBookById), new { id = createdBook.Id }, createdBook);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while adding the book.");
+            }
         }
     }
 }
