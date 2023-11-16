@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using Owna.BookStore.Domain.Data;
+
 namespace Owna.BookStore.WebApi
 {
     public class Program
@@ -8,8 +11,9 @@ namespace Owna.BookStore.WebApi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase("BookStoreDb"));
             builder.Services.AddControllers();
+            
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
